@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hindustan Tube Pro</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand" onclick="goHome()"><img src="assets/app_logo.png" alt="Hindustan Tube Pro"><span>Hindustan Tube <b>Pro</b></span></div>
+  <div class="search"><input id="searchInput" placeholder="Search videos, channels..." oninput="searchVideos()"><button aria-label="Search">⌕</button></div>
+  <div class="actions"><button onclick="toggleTheme()">◐</button><button>🔔</button><button class="avatar">HT</button></div>
+</header>
+<nav class="chips" id="chips"><button class="active" onclick="filterCat('All',this)">All</button><button onclick="filterCat('News',this)">News</button><button onclick="filterCat('Sports',this)">Sports</button><button onclick="filterCat('Entertainment',this)">Entertainment</button><button onclick="filterCat('Devotion',this)">Devotion</button><button onclick="filterCat('Education',this)">Education</button><button onclick="filterCat('Live',this)">Live</button></nav>
+<main>
+<section id="homeView">
+  <div class="hero" onclick="openVideo(0)"><img src="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"><div class="heroText"><span class="live">● LIVE</span><h1>भारत की बड़ी खबरें और आज का अपडेट</h1><p>Hindustan Tube Pro • 1.2M views • 3 hours ago</p><button class="primary">▶ Watch now</button></div></div>
+  <div class="sectionHead"><h2>🔥 Trending Videos</h2><a>View All</a></div>
+  <div class="grid" id="videoGrid"></div>
+</section>
+<section id="shortsView" class="hidden"><div class="sectionHead"><h2>Shorts</h2><a>Latest</a></div><div class="shortGrid" id="shortGrid"></div></section>
+<section id="subscriptionsView" class="hidden"><div class="sectionHead"><h2>Subscriptions</h2></div><div class="channelGrid"><div class="channel"><div class="avatar big">HT</div><b>Hindustan Tube Pro</b><span>5.6M subscribers</span><button class="primary">Subscribed</button></div><div class="channel"><div class="avatar big">BN</div><b>Bharat News</b><span>2.4M subscribers</span><button>Subscribe</button></div></div></section>
+<section id="libraryView" class="hidden"><div class="sectionHead"><h2>Your Library</h2></div><div class="library"><div>🕘 <b>History</b><span>Recently watched videos</span></div><div>⬇️ <b>Downloads</b><span>Offline videos</span></div><div>👍 <b>Liked videos</b><span>Your saved likes</span></div><div>🕒 <b>Watch later</b><span>Videos to watch later</span></div></div></section>
+</main>
+<div id="playerModal" class="modal hidden"><div class="playerBox"><button class="close" onclick="closeVideo()">✕</button><video id="player" controls playsinline></video><div class="playerInfo"><h2 id="playerTitle"></h2><p id="playerMeta"></p><div class="playerActions"><button>👍 Like</button><button>💬 Comment</button><button>↗ Share</button><button>⬇ Download</button><button>＋ Save</button></div><p>Hindustan Tube Pro — भारत की आवाज • सच्ची खबर • मनोरंजन</p></div></div></div>
+<nav class="bottom"><button class="navActive" onclick="showView('homeView',this)">⌂<span>Home</span></button><button onclick="showView('shortsView',this)">▶<span>Shorts</span></button><button class="upload" onclick="alert('Upload screen: video, thumbnail, title और description यहाँ जोड़ें।')">＋</button><button onclick="showView('subscriptionsView',this)">▣<span>Subscriptions</span></button><button onclick="showView('libraryView',this)">▤<span>Library</span></button></nav>
+<script src="app.js"></script>
+</body></html>
